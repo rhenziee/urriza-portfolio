@@ -66,3 +66,11 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
             submitBtn.disabled = false;
         });
 });
+
+function toggleDesc(btn) {
+    const wrapper = document.querySelector('.desc-wrapper');
+    const isCollapsed = wrapper.classList.contains('collapsed');
+    wrapper.classList.toggle('collapsed', !isCollapsed);
+    btn.querySelector('span').textContent = isCollapsed ? 'Read Less' : 'Read More';
+    btn.classList.toggle('open', isCollapsed);
+}
